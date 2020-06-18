@@ -1,0 +1,5 @@
+.not-found {
+  font-size: xx-large;
+  position: absolute;
+  background-image: url("");
+}
