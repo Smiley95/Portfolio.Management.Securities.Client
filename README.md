@@ -6,15 +6,5 @@
 
     - ReactJs
     - npm
-    - Redux
 
 ## Used packages
-
-    - react-bootstrap
-    - react-toastify
-    - redux
-    - redux-immutable-state-invariant
-    - redux-thunk
-    - react-redux
-    - react-devtools
-    - react-private-route
