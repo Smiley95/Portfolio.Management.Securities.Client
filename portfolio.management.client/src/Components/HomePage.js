@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Page from "../layout/Page";
+import NumberWidget from "./NumberWidget";
 import { Bar, Line } from "react-chartjs-2";
 import InfiniteCalendar from "react-infinite-calendar";
 import {
@@ -77,6 +78,8 @@ const HomePage = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
+  useEffect(() => window.scrollTo(0, 0));
+
   const next = () => {
     if (animating) return;
     const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
@@ -114,55 +117,55 @@ const HomePage = () => {
     >
       <Row>
         <Col lg={3} md={6} sm={6} xs={12}>
-          {/* <NumberWidget
-              title="Total Profit"
-              subtitle="This month"
-              number="9.8k"
-              color="secondary"
-              progress={{
-                value: 75,
-                label: "Last month",
-              }}
-            /> */}
+          <NumberWidget
+            title="Total Profit"
+            subtitle="This month"
+            number="9.8k"
+            color="secondary"
+            progress={{
+              value: 75,
+              label: "Last month",
+            }}
+          />
         </Col>
 
         <Col lg={3} md={6} sm={6} xs={12}>
-          {/* <NumberWidget
-              title="Monthly Visitors"
-              subtitle="This month"
-              number="5,400"
-              color="secondary"
-              progress={{
-                value: 45,
-                label: "Last month",
-              }}
-            /> */}
+          <NumberWidget
+            title="Monthly Visitors"
+            subtitle="This month"
+            number="5,400"
+            color="secondary"
+            progress={{
+              value: 45,
+              label: "Last month",
+            }}
+          />
         </Col>
 
         <Col lg={3} md={6} sm={6} xs={12}>
-          {/* <NumberWidget
-              title="New Users"
-              subtitle="This month"
-              number="3,400"
-              color="secondary"
-              progress={{
-                value: 90,
-                label: "Last month",
-              }}
-            /> */}
+          <NumberWidget
+            title="New Users"
+            subtitle="This month"
+            number="3,400"
+            color="secondary"
+            progress={{
+              value: 90,
+              label: "Last month",
+            }}
+          />
         </Col>
 
         <Col lg={3} md={6} sm={6} xs={12}>
-          {/* <NumberWidget
-              title="Bounce Rate"
-              subtitle="This month"
-              number="38%"
-              color="secondary"
-              progress={{
-                value: 60,
-                label: "Last month",
-              }}
-            /> */}
+          <NumberWidget
+            title="Bounce Rate"
+            subtitle="This month"
+            number="38%"
+            color="secondary"
+            progress={{
+              value: 60,
+              label: "Last month",
+            }}
+          />
         </Col>
       </Row>
       <Row>
@@ -188,8 +191,4 @@ const HomePage = () => {
     </Page>
   );
 };
-// componentDidMount() {
-//   // this is needed, because InfiniteCalendar forces window scroll
-//   window.scrollTo(0, 0);
-// }
 export default HomePage;
