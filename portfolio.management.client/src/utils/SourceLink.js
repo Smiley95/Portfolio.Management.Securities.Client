@@ -6,7 +6,7 @@ const SourceLink = (props) => {
     <a
       href="https://www.linedata.com/"
       target="_blank"
-      rel="linedata website"
+      rel="noopener noreferrer"
       {...props}
     />
   );

@@ -1,8 +1,6 @@
-import LDSlogo from "../../img/LDSlogo.jpg";
+import LDSlogo from "../../img/LDSlogo.png";
 import LDSside from "../../img/LDSside.jpg";
-import SourceLink from "../../utils/SourceLink";
 import React from "react";
-import { FaGithub } from "react-icons/fa";
 import {
   MdAccountCircle,
   MdArrowDropDownCircle,
@@ -33,6 +31,7 @@ import {
   Nav,
   Navbar,
   NavItem,
+  NavbarBrand,
   NavLink as BSNavLink,
 } from "reactstrap";
 import bn from "../../utils/bemnames";
@@ -112,18 +111,16 @@ class Sidebar extends React.Component {
         <div className={bem.e("background")} style={sidebarBackground} />
         <div className={bem.e("content")}>
           <Navbar>
-            <SourceLink className="navbar-brand d-flex">
+            <NavbarBrand href="/">
               <img
                 src={LDSlogo}
                 width="40"
                 height="30"
                 className="pr-2"
-                alt=""
+                alt="Linedata logo"
               />
-              <span className="text-white">
-                Reduction <FaGithub />
-              </span>
-            </SourceLink>
+              <span className="text-white">Linedata</span>
+            </NavbarBrand>
           </Navbar>
           <Nav vertical>
             {navItems.map(({ to, name, exact, Icon }, index) => (

@@ -1,16 +1,16 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+//import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import HomePage from "./Components/HomePage";
 import MainLayout from "./layout/MainLayout";
 import PageNotFound from "./Components/PageNotFound";
 import componentQueries from "react-component-queries";
+import "./styles/reduction.scss";
 
 function App() {
   return (
     <Switch>
-      <MainLayout breakpoint={this.props.breakpoint}>
+      <MainLayout>
         <Route exact path="/" component={HomePage} />
       </MainLayout>
       <Route component={PageNotFound} />
