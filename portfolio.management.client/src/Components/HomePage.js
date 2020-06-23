@@ -4,8 +4,6 @@ import NumberWidget from "./NumberWidget";
 import GainersTable from "./Card/GainersTable";
 import { items, gainers } from "../demos/dashboardPage";
 import { Pie, Doughnut } from "react-chartjs-2";
-
-import { Bar, Line } from "react-chartjs-2";
 import InfiniteCalendar from "react-infinite-calendar";
 import {
   Badge,
@@ -135,7 +133,7 @@ const HomePage = () => {
         </Col>
       </Row>
       <Row>
-        <Col md="9" sm="12" xs="12">
+        <Col md="6" sm="12" xs="12">
           <Carousel activeIndex={activeIndex} next={next} previous={previous}>
             <CarouselIndicators
               items={items}
@@ -155,7 +153,7 @@ const HomePage = () => {
             />
           </Carousel>
         </Col>
-        <Col md="3" sm="12" xs="12">
+        <Col md="6" sm="12" xs="12">
           <Card>
             <CardHeader>Gainers</CardHeader>
             <CardBody>
@@ -170,7 +168,7 @@ const HomePage = () => {
       <Row>
         <Col xl={6} lg={12} md={12}>
           <Card>
-            <CardHeader>Pie</CardHeader>
+            <CardHeader>CURRENCIES</CardHeader>
             <CardBody>
               <Pie data={genPieData()} />
             </CardBody>
@@ -179,7 +177,7 @@ const HomePage = () => {
 
         <Col xl={6} lg={12} md={12}>
           <Card>
-            <CardHeader>Doughnut</CardHeader>
+            <CardHeader>Sectors performance</CardHeader>
             <CardBody>
               <Doughnut data={genPieData()} />
             </CardBody>

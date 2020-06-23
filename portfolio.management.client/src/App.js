@@ -5,13 +5,19 @@ import HomePage from "./Components/HomePage";
 import MainLayout from "./layout/MainLayout";
 import PageNotFound from "./Components/PageNotFound";
 import componentQueries from "react-component-queries";
+import PortfolioList from "./Components/PortfoliosList";
+import Login from "./layout/Login";
 import "./styles/reduction.scss";
 
 function App() {
   return (
     <Switch>
+      <Route path="/login" component={Login} />
       <MainLayout>
+        <Route path="/portfolios" component={PortfolioList} />
         <Route exact path="/" component={HomePage} />
+        {/* <Route exact path="/statistics" component={} />
+                <Route exact path="/optimizer" component={} />*/}
       </MainLayout>
       <Route component={PageNotFound} />
     </Switch>

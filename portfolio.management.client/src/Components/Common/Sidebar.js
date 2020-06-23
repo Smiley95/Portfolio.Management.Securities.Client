@@ -3,31 +3,13 @@ import LDSside from "../../img/LDSside.jpg";
 import React from "react";
 import {
   MdAccountCircle,
-  MdArrowDropDownCircle,
-  MdBorderAll,
-  MdBrush,
-  MdChromeReaderMode,
   MdDashboard,
-  MdExtension,
-  MdGroupWork,
   MdInsertChart,
-  MdKeyboardArrowDown,
-  MdNotificationsActive,
-  MdPages,
-  MdRadioButtonChecked,
-  MdSend,
-  MdStar,
-  MdTextFields,
-  MdViewCarousel,
-  MdViewDay,
   MdViewList,
-  MdWeb,
   MdWidgets,
 } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import {
-  // UncontrolledTooltip,
-  Collapse,
   Nav,
   Navbar,
   NavItem,

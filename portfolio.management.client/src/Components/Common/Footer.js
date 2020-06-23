@@ -1,6 +1,7 @@
 import React from "react";
+import LDSlogo from "../../img/LDSlogo.png";
 
-import { Navbar, Nav, NavItem } from "reactstrap";
+import { Navbar, Nav, Row, NavItem } from "reactstrap";
 
 import SourceLink from "../../utils/SourceLink";
 
@@ -9,7 +10,17 @@ const Footer = () => {
     <Navbar>
       <Nav navbar>
         <NavItem>
-          2018 Reduction theme, source on <SourceLink>Github</SourceLink>
+          <Row>
+            <img
+              src={LDSlogo}
+              width="40"
+              height="30"
+              className="pr-2"
+              alt="Linedata logo"
+            />
+            Copyright © <SourceLink>Linedata</SourceLink>, 2020. All Rights
+            Reserved.
+          </Row>
         </NavItem>
       </Nav>
     </Navbar>
