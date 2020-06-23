@@ -1,6 +1,7 @@
 import loginLogo from "../img/LinedataLogo.png";
 import LDSside from "../img/loginBack.jpg";
 import PropTypes from "prop-types";
+import {} from "module";
 import React from "react";
 import Content from "./Content";
 import {
@@ -22,8 +23,26 @@ const loginBackground = {
 };
 
 class Login extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userMail: "",
+      password: "",
+      token: "",
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
   handleSubmit = (event) => {
     event.preventDefault();
+    if (this.state.userMail && this.state.password) {
+      this.setState({ token: "hola" });
+      this.props.history.push("/");
+    }
   };
 
   render() {
@@ -34,7 +53,6 @@ class Login extends React.Component {
       passwordInputProps,
       onLogoClick,
     } = this.props;
-
     return (
       <main className="cr-app bg-light" style={loginBackground}>
         <Content fluid>
@@ -60,11 +78,17 @@ class Login extends React.Component {
                     </div>
                     <FormGroup>
                       <Label for={usernameLabel}>{usernameLabel}</Label>
-                      <Input {...usernameInputProps} />
+                      <Input
+                        onChange={this.handleChange}
+                        {...usernameInputProps}
+                      />
                     </FormGroup>
                     <FormGroup>
                       <Label for={passwordLabel}>{passwordLabel}</Label>
-                      <Input {...passwordInputProps} />
+                      <Input
+                        onChange={this.handleChange}
+                        {...passwordInputProps}
+                      />
                     </FormGroup>
                     <hr />
                     <Button
@@ -89,7 +113,6 @@ class Login extends React.Component {
 export const STATE_LOGIN = "LOGIN";
 
 Login.propTypes = {
-  authState: PropTypes.oneOf([STATE_LOGIN]).isRequired,
   usernameLabel: PropTypes.string,
   usernameInputProps: PropTypes.object,
   passwordLabel: PropTypes.string,
@@ -98,15 +121,16 @@ Login.propTypes = {
 };
 
 Login.defaultProps = {
-  authState: "LOGIN",
   usernameLabel: "Email",
   usernameInputProps: {
     type: "email",
+    name: "userMail",
     placeholder: "your@email.com",
   },
   passwordLabel: "Password",
   passwordInputProps: {
     type: "password",
+    name: "password",
     placeholder: "your password",
   },
   onLogoClick: () => {},
