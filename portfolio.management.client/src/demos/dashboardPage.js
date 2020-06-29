@@ -246,3 +246,76 @@ export const chartjs = {
     },
   },
 };
+
+export const losers = [
+  {
+    ticker: "LK",
+    changes: -1.62,
+    price: 1.38,
+    changesPercentage: "(-54.00%)",
+    companyName: "Luckin Coffee Inc.",
+  },
+  {
+    ticker: "AKRX",
+    changes: -0.0937,
+    price: 0.09,
+    changesPercentage: "(-51.01%)",
+    companyName: "Akorn Inc.",
+  },
+  {
+    ticker: "ICPT",
+    changes: -29.565,
+    price: 47.925,
+    changesPercentage: "(-38.15%)",
+    companyName: "Intercept Pharmaceuticals Inc.",
+  },
+  {
+    ticker: "CBLI",
+    changes: -1.61,
+    price: 2.65,
+    changesPercentage: "(-37.79%)",
+    companyName: "Cleveland BioLabs Inc.",
+  },
+  {
+    ticker: "BBCP",
+    changes: -1.85,
+    price: 3.63,
+    changesPercentage: "(-33.76%)",
+    companyName: "Concrete Pumping Holdings, Inc.",
+  },
+  {
+    ticker: "CTRC",
+    changes: -0.0802,
+    price: 0.1608,
+    changesPercentage: "(-33.28%)",
+    companyName: "Centric Brands Inc.",
+  },
+  {
+    ticker: "TACOW",
+    changes: -0.016,
+    price: 0.0426,
+    changesPercentage: "(-27.30%)",
+    companyName: "Del Taco Restaurants Inc. Warrants",
+  },
+  {
+    ticker: "HRTX",
+    changes: -5.3361,
+    price: 14.4839,
+    changesPercentage: "(-26.92%)",
+    companyName: "Heron Therapeutics Inc.",
+  },
+  {
+    ticker: "CJJD",
+    changes: -0.48,
+    price: 1.4,
+    changesPercentage: "(-25.53%)",
+    companyName: "China Jo-Jo Drugstores Inc.",
+  },
+  {
+    ticker: "BVXVW",
+    changes: -2.4901,
+    price: 7.51,
+    changesPercentage: "(-24.90%)",
+    companyName: "BiondVax Pharmaceuticals Ltd. Warrants",
+  },
+];

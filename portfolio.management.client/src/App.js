@@ -6,6 +6,9 @@ import MainLayout from "./layout/MainLayout";
 import PageNotFound from "./Components/PageNotFound";
 import componentQueries from "react-component-queries";
 import PortfolioList from "./Components/PortfoliosList";
+import Portfolio from "./Components/Portfolio";
+import AddAsset from "./Components/AddAsset";
+import Asset from "./Components/Asset";
 import Login from "./layout/Login";
 import "./styles/reduction.scss";
 
@@ -14,7 +17,10 @@ function App() {
     <Switch>
       <Route path="/login" component={Login} />
       <MainLayout>
+        <Route path="/portfolio" component={Portfolio} />
         <Route path="/portfolios" component={PortfolioList} />
+        <Route path="/addAsset" component={AddAsset} />
+        <Route path="/asset" component={Asset} />
         <Route exact path="/" component={HomePage} />
         {/* <Route exact path="/statistics" component={} />
                 <Route exact path="/optimizer" component={} />*/}

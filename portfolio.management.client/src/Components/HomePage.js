@@ -4,19 +4,11 @@ import NumberWidget from "./NumberWidget";
 import GainersTable from "./Card/GainersTable";
 import { items, gainers } from "../demos/dashboardPage";
 import { Pie, Doughnut } from "react-chartjs-2";
-import InfiniteCalendar from "react-infinite-calendar";
 import {
-  Badge,
-  Button,
   Card,
   CardBody,
-  CardDeck,
-  CardGroup,
   CardHeader,
-  CardTitle,
   Col,
-  ListGroup,
-  ListGroupItem,
   Row,
   Carousel,
   CarouselItem,
@@ -159,7 +151,7 @@ const HomePage = () => {
             <CardBody>
               <GainersTable
                 headers={["ticker", "change %", "price"]}
-                gainers={gainers}
+                items={gainers}
               />
             </CardBody>
           </Card>

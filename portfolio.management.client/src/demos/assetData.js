@@ -2,17 +2,17 @@ import React from "react";
 import { MDBBtn, MDBRow } from "mdbreact";
 import { Link } from "react-router-dom";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
-export const Portfolios = {
+export const assets = {
   columns: [
     {
-      label: "Label",
-      field: "label",
+      label: "Ticker",
+      field: "id",
       sort: "asc",
       width: 150,
     },
     {
-      label: "Owner name",
-      field: "owner",
+      label: "Name",
+      field: "name",
       sort: "asc",
       width: 270,
     },
@@ -37,217 +37,181 @@ export const Portfolios = {
   ],
   rows: [
     {
-      label: "SPY",
-      owner: "SPDR S&P 500",
+      id: "SPY",
+      name: "SPDR S&P 500",
       price: 294.94,
       quantity: 20,
       handle: (
         <MDBRow center>
           <MDBBtn color="success" size="sm">
-            <Link to="/portfolio" style={{ color: "white" }}>
+            <Link to="/asset" style={{ color: "white" }}>
               <AiFillEdit />
             </Link>
-          </MDBBtn>
-          <MDBBtn color="danger" size="sm">
-            <AiFillDelete />
           </MDBBtn>
         </MDBRow>
       ),
     },
     {
-      label: "CMCSA",
-      owner: "Comcast Corporation Class A Common Stock",
+      id: "CMCSA",
+      name: "Comcast Corporation Class A Common Stock",
       price: 38.09,
       quantity: 20,
       handle: (
         <MDBRow center>
           <MDBBtn color="success" size="sm">
-            <Link to="/portfolio" style={{ color: "white" }}>
+            <Link to="/asset" style={{ color: "white" }}>
               <AiFillEdit />
             </Link>
-          </MDBBtn>
-          <MDBBtn color="danger" size="sm">
-            <AiFillDelete />
           </MDBBtn>
         </MDBRow>
       ),
     },
     {
-      label: "KMI",
-      owner: "Kinder Morgan Inc.",
+      id: "KMI",
+      name: "Kinder Morgan Inc.",
       price: 15.49,
       quantity: 20,
       handle: (
         <MDBRow center>
           <MDBBtn color="success" size="sm">
-            <Link to="/portfolio" style={{ color: "white" }}>
+            <Link to="/asset" style={{ color: "white" }}>
               <AiFillEdit />
             </Link>
-          </MDBBtn>
-          <MDBBtn color="danger" size="sm">
-            <AiFillDelete />
           </MDBBtn>
         </MDBRow>
       ),
     },
     {
-      label: "INTC",
-      owner: "Intel Corporation",
+      id: "INTC",
+      name: "Intel Corporation",
       price: 59.92,
       quantity: 20,
       handle: (
         <MDBRow center>
           <MDBBtn color="success" size="sm">
-            <Link to="/portfolio" style={{ color: "white" }}>
+            <Link to="/asset" style={{ color: "white" }}>
               <AiFillEdit />
             </Link>
-          </MDBBtn>
-          <MDBBtn color="danger" size="sm">
-            <AiFillDelete />
           </MDBBtn>
         </MDBRow>
       ),
     },
     {
-      label: "MU",
-      owner: "Micron Technology Inc.",
+      id: "MU",
+      name: "Micron Technology Inc.",
       price: 45.92,
       quantity: 20,
       handle: (
         <MDBRow center>
           <MDBBtn color="success" size="sm">
-            <Link to="/portfolio" style={{ color: "white" }}>
+            <Link to="/asset" style={{ color: "white" }}>
               <AiFillEdit />
             </Link>
-          </MDBBtn>
-          <MDBBtn color="danger" size="sm">
-            <AiFillDelete />
           </MDBBtn>
         </MDBRow>
       ),
     },
     {
-      label: "GDX",
-      owner: "VanEck Vectors Gold Miners",
+      id: "GDX",
+      name: "VanEck Vectors Gold Miners",
       price: 35.93,
       quantity: 20,
       handle: (
         <MDBRow center>
           <MDBBtn color="success" size="sm">
-            <Link to="/portfolio" style={{ color: "white" }}>
+            <Link to="/asset" style={{ color: "white" }}>
               <AiFillEdit />
             </Link>
-          </MDBBtn>
-          <MDBBtn color="danger" size="sm">
-            <AiFillDelete />
           </MDBBtn>
         </MDBRow>
       ),
     },
     {
-      label: "GE",
-      owner: "General Electric Company",
+      id: "GE",
+      name: "General Electric Company",
       price: 6.27,
       quantity: 20,
       handle: (
         <MDBRow center>
           <MDBBtn color="success" size="sm">
-            <Link to="/portfolio" style={{ color: "white" }}>
+            <Link to="/asset" style={{ color: "white" }}>
               <AiFillEdit />
             </Link>
-          </MDBBtn>
-          <MDBBtn color="danger" size="sm">
-            <AiFillDelete />
           </MDBBtn>
         </MDBRow>
       ),
     },
     {
-      label: "BAC",
-      owner: "Bank of America Corporation",
+      id: "BAC",
+      name: "Bank of America Corporation",
       price: 22.93,
       quantity: 20,
       handle: (
         <MDBRow center>
           <MDBBtn color="success" size="sm">
-            <Link to="/portfolio" style={{ color: "white" }}>
+            <Link to="/asset" style={{ color: "white" }}>
               <AiFillEdit />
             </Link>
-          </MDBBtn>
-          <MDBBtn color="danger" size="sm">
-            <AiFillDelete />
           </MDBBtn>
         </MDBRow>
       ),
     },
     {
-      label: "EEM",
-      owner: "iShares MSCI Emerging Index Fund",
+      id: "EEM",
+      name: "iShares MSCI Emerging Index Fund",
       price: 37.44,
       quantity: 20,
       handle: (
         <MDBRow center>
           <MDBBtn color="success" size="sm">
-            <Link to="/portfolio" style={{ color: "white" }}>
+            <Link to="/asset" style={{ color: "white" }}>
               <AiFillEdit />
             </Link>
-          </MDBBtn>
-          <MDBBtn color="danger" size="sm">
-            <AiFillDelete />
           </MDBBtn>
         </MDBRow>
       ),
     },
     {
-      label: "XLF",
-      owner: "SPDR Select Sector Fund - Financial",
+      id: "XLF",
+      name: "SPDR Select Sector Fund - Financial",
       price: 22.13,
       quantity: 20,
       handle: (
         <MDBRow center>
           <MDBBtn color="success" size="sm">
-            <Link to="/portfolio" style={{ color: "white" }}>
+            <Link to="/asset" style={{ color: "white" }}>
               <AiFillEdit />
             </Link>
-          </MDBBtn>
-          <MDBBtn color="danger" size="sm">
-            <AiFillDelete />
           </MDBBtn>
         </MDBRow>
       ),
     },
     {
-      label: "AAPL",
-      owner: "Apple Inc.",
+      id: "AAPL",
+      name: "Apple Inc.",
       price: 314.96,
       quantity: 20,
       handle: (
         <MDBRow center>
           <MDBBtn color="success" size="sm">
-            <Link to="/portfolio" style={{ color: "white" }}>
+            <Link to="/asset" style={{ color: "white" }}>
               <AiFillEdit />
             </Link>
-          </MDBBtn>
-          <MDBBtn color="danger" size="sm">
-            <AiFillDelete />
           </MDBBtn>
         </MDBRow>
       ),
     },
     {
-      label: "MSFT",
-      owner: "Microsoft Corporation",
+      id: "MSFT",
+      name: "Microsoft Corporation",
       price: 184.91,
       quantity: 20,
       handle: (
         <MDBRow center>
           <MDBBtn color="success" size="sm">
-            <Link to="/portfolio" style={{ color: "white" }}>
+            <Link to="/asset" style={{ color: "white" }}>
               <AiFillEdit />
             </Link>
-          </MDBBtn>
-          <MDBBtn color="danger" size="sm">
-            <AiFillDelete />
           </MDBBtn>
         </MDBRow>
       ),

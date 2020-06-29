@@ -1,7 +1,6 @@
 import loginLogo from "../img/LinedataLogo.png";
 import LDSside from "../img/loginBack.jpg";
 import PropTypes from "prop-types";
-import {} from "module";
 import React from "react";
 import Content from "./Content";
 import {

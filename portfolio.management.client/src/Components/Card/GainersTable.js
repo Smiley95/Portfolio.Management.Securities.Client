@@ -3,7 +3,7 @@ import PropTypes from "../../utils/propTypes";
 
 import { Table, Badge } from "reactstrap";
 
-const GainersTable = ({ headers, gainers, ...restProps }) => {
+const GainersTable = ({ headers, items, ...restProps }) => {
   return (
     <Table responsive hover {...restProps}>
       <thead>
@@ -14,11 +14,16 @@ const GainersTable = ({ headers, gainers, ...restProps }) => {
         </tr>
       </thead>
       <tbody>
-        {gainers.map(({ ticker, changesPercentage, price }, index) => (
+        {items.map(({ ticker, changesPercentage, price }, index) => (
           <tr key={index}>
             <td className="align-middle text-center">{ticker}</td>
             <td className="align-middle text-center">
-              <Badge color="success">{changesPercentage}</Badge>
+              {changesPercentage.includes("+") && (
+                <Badge color="success">{changesPercentage}</Badge>
+              )}
+              {changesPercentage.includes("-") && (
+                <Badge color="danger">{changesPercentage}</Badge>
+              )}
             </td>
             <td className="align-middle text-center">{price}</td>
           </tr>
@@ -30,7 +35,7 @@ const GainersTable = ({ headers, gainers, ...restProps }) => {
 
 GainersTable.propTypes = {
   headers: PropTypes.node,
-  gainers: PropTypes.arrayOf(
+  items: PropTypes.arrayOf(
     PropTypes.shape({
       ticker: PropTypes.string,
       changesPercentage: PropTypes.string,
@@ -41,7 +46,7 @@ GainersTable.propTypes = {
 
 GainersTable.defaultProps = {
   headers: [],
-  gainers: [],
+  items: [],
 };
 
 export default GainersTable;
