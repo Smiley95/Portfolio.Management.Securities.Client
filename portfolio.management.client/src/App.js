@@ -9,6 +9,7 @@ import PortfolioList from "./Components/PortfoliosList";
 import Portfolio from "./Components/Portfolio";
 import AddAsset from "./Components/AddAsset";
 import Asset from "./Components/Asset";
+import PortfolioReport from "./Components/PortfolioReport";
 import Login from "./layout/Login";
 import "./styles/reduction.scss";
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/addAsset" component={AddAsset} />
         <Route path="/asset" component={Asset} />
         <Route exact path="/" component={HomePage} />
+        <Route path="/statistics" component={PortfolioReport} />
         {/* <Route exact path="/statistics" component={} />
                 <Route exact path="/optimizer" component={} />*/}
       </MainLayout>

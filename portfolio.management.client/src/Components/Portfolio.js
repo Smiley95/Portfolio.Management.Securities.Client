@@ -65,7 +65,14 @@ const Portfolio = () => {
                     "justify-content": "flex-end",
                   }}
                 >
-                  <Button onClick={redirectToTarget}>Add asset</Button>
+                  <Button
+                    onClick={redirectToTarget}
+                    style={{ "margin-inline-end": "10px" }}
+                  >
+                    Add asset
+                  </Button>
+                  <Button onClick={true}>Optimize</Button>
+                  {/*will consume the optimization service and return the resulted output*/}
                 </Row>
                 <MDBDataTable striped bordered large responsive data={assets} />
               </CardBody>

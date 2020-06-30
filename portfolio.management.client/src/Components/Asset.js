@@ -19,7 +19,6 @@ import {
   Form,
   FormGroup,
   Input,
-  InputGroupAddon,
 } from "reactstrap";
 import { MdStar, MdStarBorder } from "react-icons/md";
 import { Line } from "react-chartjs-2";

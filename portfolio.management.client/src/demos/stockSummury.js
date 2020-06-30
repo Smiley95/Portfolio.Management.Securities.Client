@@ -748,3 +748,82 @@ export const assetHistory = [
     close: 234.37,
   },
 ];
+
+export const annualValue = [
+  {
+    date: "2019",
+    enterpriseValue: 12,
+  },
+  {
+    date: "2018",
+    enterpriseValue: 11,
+  },
+  {
+    date: "2017",
+    enterpriseValue: 86,
+  },
+  {
+    date: "2016",
+    enterpriseValue: 63,
+  },
+  {
+    date: "2015",
+    enterpriseValue: 64,
+  },
+  {
+    date: "2014",
+    enterpriseValue: 66,
+  },
+  {
+    date: "2013",
+    enterpriseValue: 72,
+  },
+  {
+    date: "2012",
+    enterpriseValue: 69,
+  },
+  {
+    date: "2011",
+    enterpriseValue: 43,
+  },
+  {
+    date: "2010",
+    enterpriseValue: 28,
+  },
+  {
+    date: "2009",
+    enterpriseValue: 20,
+  },
+  {
+    date: "2008",
+    enterpriseValue: -27,
+  },
+  {
+    date: "2007",
+    enterpriseValue: 13,
+  },
+  {
+    date: "2006",
+    enterpriseValue: 28,
+  },
+  {
+    date: "2005",
+    enterpriseValue: 30,
+  },
+  {
+    date: "2004",
+    enterpriseValue: -17,
+  },
+  {
+    date: "2003",
+    enterpriseValue: -28,
+  },
+  {
+    date: "2002",
+    enterpriseValue: -15,
+  },
+  {
+    date: "2001",
+    enterpriseValue: -15,
+  },
+];
