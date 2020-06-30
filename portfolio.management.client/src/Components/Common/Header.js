@@ -42,7 +42,7 @@ const MdNotificationsActiveWithBadge = withBadge({
     justifyContent: "center",
     alignItems: "center",
   },
-  children: <small>5</small>,
+  children: <small>1</small>,
 })(MdNotificationsActive);
 
 class Header extends React.Component {
@@ -135,28 +135,34 @@ class Header extends React.Component {
             >
               <PopoverBody className="p-0 border-light">
                 <UserCard
-                  title="Jane"
-                  subtitle="jane@jane.com"
-                  text="Last updated 3 mins ago"
+                  title="Eya"
+                  subtitle="eya.taieb@linedata.com"
+                  text="let's humanize technology"
                   className="border-light"
                 >
                   <ListGroup flush>
-                    <ListGroupItem tag="button" action className="border-light">
-                      <MdPersonPin /> Profile
-                    </ListGroupItem>
-                    <ListGroupItem tag="button" action className="border-light">
+                    <ListGroupItem
+                      tag="a"
+                      href="#"
+                      action
+                      className="border-light"
+                    >
                       <MdInsertChart /> Stats
                     </ListGroupItem>
-                    <ListGroupItem tag="button" action className="border-light">
-                      <MdMessage /> Messages
+                    <ListGroupItem
+                      tag="a"
+                      action
+                      href="https://fr.linedata.com/contact"
+                      className="border-light"
+                    >
+                      <MdHelp /> Contact us
                     </ListGroupItem>
-                    <ListGroupItem tag="button" action className="border-light">
-                      <MdSettingsApplications /> Settings
-                    </ListGroupItem>
-                    <ListGroupItem tag="button" action className="border-light">
-                      <MdHelp /> Help
-                    </ListGroupItem>
-                    <ListGroupItem tag="button" action className="border-light">
+                    <ListGroupItem
+                      tag="a"
+                      href="/login"
+                      action
+                      className="border-light"
+                    >
                       <MdExitToApp /> Signout
                     </ListGroupItem>
                   </ListGroup>

@@ -63,7 +63,11 @@ class MainLayout extends React.Component {
     return (
       <main className="cr-app bg-light">
         <Sidebar />
-        <Content fluid onClick={this.handleContentClick}>
+        <Content
+          className="horizontal-scrollable"
+          fluid
+          onClick={this.handleContentClick}
+        >
           <Header />
           {children}
           <Footer />
