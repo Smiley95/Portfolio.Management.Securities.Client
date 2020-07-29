@@ -8,7 +8,6 @@ import {
   Col,
   CardBody,
   CardHeader,
-  CardFooter,
   Card,
   FormGroup,
   Label,
