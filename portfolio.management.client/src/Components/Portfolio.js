@@ -9,7 +9,7 @@ import NumberWidget from "./NumberWidget";
 const Portfolio = () => {
   const history = useHistory();
   const redirectToTarget = () => {
-    history.push("/addAsset");
+    history.push("/dashboard/addAsset");
   };
   return (
     <>

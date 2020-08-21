@@ -26,9 +26,24 @@ const sidebarBackground = {
 
 const navItems = [
   { to: "/", name: "dashboard", exact: true, Icon: MdDashboard },
-  { to: "/portfolios", name: "portfolios", exact: false, Icon: MdViewList },
-  { to: "/statistics", name: "statistics", exact: false, Icon: MdInsertChart },
-  { to: "/optimizer", name: "optimizer", exact: false, Icon: MdWidgets },
+  {
+    to: "/portfolios",
+    name: "portfolios",
+    exact: false,
+    Icon: MdViewList,
+  },
+  {
+    to: "/statistics",
+    name: "statistics",
+    exact: false,
+    Icon: MdInsertChart,
+  },
+  {
+    to: "/optimizer",
+    name: "optimizer",
+    exact: false,
+    Icon: MdWidgets,
+  },
   { to: "/login", name: "logout", exact: false, Icon: MdAccountCircle },
 ];
 

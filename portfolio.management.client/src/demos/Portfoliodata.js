@@ -80,7 +80,7 @@ export const Portfolios = {
       handle: (
         <MDBRow center>
           <MDBBtn color="success" size="sm">
-            <Link to="/portfolio" style={{ color: "white" }}>
+            <Link to="/dashboard/portfolio" style={{ color: "white" }}>
               <AiFillEdit />
             </Link>
           </MDBBtn>

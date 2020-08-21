@@ -20,7 +20,7 @@ import {
 const AddAsset = () => {
   const history = useHistory();
   const handleSubmit = () => {
-    history.push("/portfolio");
+    history.push("/dashboard/portfolio");
   };
   const randomNum = (min = 0, max = 1000) => {
     return min + Math.random() * (max - min);

@@ -15,9 +15,13 @@
     "react-component-queries": "^2.3.0",
     "react-dom": "^16.13.1",
     "react-rating": "^2.0.5",
+    "react-redux": "^7.2.1",
     "react-scripts": "3.4.1",
     "react-sizeme": "^2.6.12",
     "react-to-pdf": "0.0.11",
+    "redux": "^4.0.5",
+    "redux-immutable-state-invariant": "^2.1.0",
+    "redux-thunk": "^2.3.0",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.18.0"

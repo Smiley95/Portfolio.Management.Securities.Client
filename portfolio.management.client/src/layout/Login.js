@@ -1,6 +1,7 @@
 import loginLogo from "../img/LinedataLogo.png";
 import LDSside from "../img/loginBack.jpg";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import React from "react";
 import Content from "./Content";
 import {
@@ -14,6 +15,10 @@ import {
   Card,
   CardBody,
 } from "reactstrap";
+import { UserActions } from "../redux/actions/UserActions";
+import { createBrowserHistory } from "history";
+
+const history = createBrowserHistory();
 
 const loginBackground = {
   "background-image": `url("${LDSside}")`,
@@ -24,34 +29,34 @@ const loginBackground = {
 class Login extends React.Component {
   constructor(props) {
     super(props);
+    this.props.logout();
     this.state = {
       userMail: "",
       password: "",
       token: "",
+      submitted: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
   handleSubmit = (event) => {
     event.preventDefault();
-    if (this.state.userMail && this.state.password) {
-      this.setState({ token: "hola" });
-      this.props.history.push("/");
+    this.setState({ submitted: true });
+    const { userMail, password } = this.state;
+    if (userMail && password) {
+      this.props.login(userMail, password);
     }
   };
 
   render() {
-    const {
-      usernameLabel,
-      usernameInputProps,
-      passwordLabel,
-      passwordInputProps,
-      onLogoClick,
-    } = this.props;
+    const { loggingIn } = this.props;
+    const { userMail, password, submitted } = this.state;
+    const { onLogoClick } = this.props;
     return (
       <main className="cr-app bg-light" style={loginBackground}>
         <Content fluid>
@@ -76,26 +81,28 @@ class Login extends React.Component {
                       />
                     </div>
                     <FormGroup>
-                      <Label for={usernameLabel}>{usernameLabel}</Label>
+                      <Label for="userMail">{"Email"}</Label>
                       <Input
+                        type="email"
+                        name="userMail"
+                        required
+                        className="form-control"
                         onChange={this.handleChange}
-                        {...usernameInputProps}
+                        placeholder="email@domain.com"
                       />
                     </FormGroup>
                     <FormGroup>
-                      <Label for={passwordLabel}>{passwordLabel}</Label>
+                      <Label for="password">{"Password"}</Label>
                       <Input
+                        type="password"
+                        name="password"
+                        required
                         onChange={this.handleChange}
-                        {...passwordInputProps}
+                        placeholder="password"
                       />
                     </FormGroup>
                     <hr />
-                    <Button
-                      size="lg"
-                      className="bg-gradient-theme-left border-0"
-                      block
-                      onClick={this.handleSubmit}
-                    >
+                    <Button size="lg" className="border-0" block>
                       Login
                     </Button>
                   </Form>
@@ -112,27 +119,15 @@ class Login extends React.Component {
 export const STATE_LOGIN = "LOGIN";
 
 Login.propTypes = {
-  usernameLabel: PropTypes.string,
-  usernameInputProps: PropTypes.object,
-  passwordLabel: PropTypes.string,
-  passwordInputProps: PropTypes.object,
   onLogoClick: PropTypes.func,
 };
 
-Login.defaultProps = {
-  usernameLabel: "Email",
-  usernameInputProps: {
-    type: "email",
-    name: "userMail",
-    placeholder: "your@email.com",
-  },
-  passwordLabel: "Password",
-  passwordInputProps: {
-    type: "password",
-    name: "password",
-    placeholder: "your password",
-  },
-  onLogoClick: () => {},
+function mapStateToProps(state, ownProps) {
+  const { loggingIn } = state.authentication;
+  return { loggingIn };
+}
+const actionCreators = {
+  login: UserActions.login,
+  logout: UserActions.logout,
 };
-
-export default Login;
+export default connect(mapStateToProps, actionCreators)(Login);
