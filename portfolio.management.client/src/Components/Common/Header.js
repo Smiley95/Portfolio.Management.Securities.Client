@@ -10,11 +10,8 @@ import {
   MdExitToApp,
   MdHelp,
   MdInsertChart,
-  MdMessage,
   MdNotificationsActive,
   MdNotificationsNone,
-  MdPersonPin,
-  MdSettingsApplications,
 } from "react-icons/md";
 import {
   Button,

@@ -2,10 +2,14 @@ import Footer from "../Components/Common/Footer";
 import Header from "../Components/Common/Header";
 import Sidebar from "../Components/Common/Sidebar";
 import Content from "./Content";
+import { connect } from "react-redux";
+import { portfoliosActions } from "../redux/actions/portfoliosActions";
+import { bindActionCreators } from "redux";
+import PropTypes from "prop-types";
+
 import React from "react";
 class MainLayout extends React.Component {
   static isSidebarOpen() {
-    //return true;
     return document
       .querySelector(".cr-sidebar")
       .classList.contains("cr-sidebar--open");
@@ -19,6 +23,9 @@ class MainLayout extends React.Component {
 
   componentDidMount() {
     this.checkBreakpoint(this.props.breakpoint);
+    const { portfolios, actions } = this.props;
+    actions.loadPortfolios();
+    console.log("portfolio is ", portfolios);
   }
 
   // close sidebar when
@@ -77,4 +84,20 @@ class MainLayout extends React.Component {
   }
 }
 
-export default MainLayout;
+MainLayout.propTypes = {
+  portfolios: PropTypes.array.isRequired,
+  actions: PropTypes.object.isRequired,
+};
+
+function mapStateToProps(state) {
+  return {
+    portfolios: state.portfolios,
+  };
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(portfoliosActions, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainLayout);

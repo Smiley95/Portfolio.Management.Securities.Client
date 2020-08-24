@@ -16,9 +16,6 @@ import {
   CardBody,
 } from "reactstrap";
 import { UserActions } from "../redux/actions/UserActions";
-import { createBrowserHistory } from "history";
-
-const history = createBrowserHistory();
 
 const loginBackground = {
   "background-image": `url("${LDSside}")`,
@@ -55,6 +52,7 @@ class Login extends React.Component {
 
   render() {
     const { loggingIn } = this.props;
+    console.log("log var : ", loggingIn);
     const { userMail, password, submitted } = this.state;
     const { onLogoClick } = this.props;
     return (
@@ -115,9 +113,6 @@ class Login extends React.Component {
     );
   }
 }
-
-export const STATE_LOGIN = "LOGIN";
-
 Login.propTypes = {
   onLogoClick: PropTypes.func,
 };

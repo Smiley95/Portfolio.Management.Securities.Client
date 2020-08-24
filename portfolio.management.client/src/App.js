@@ -1,12 +1,12 @@
 import React from "react";
 //import "./App.css";
-import { Route, Switch, Redirect, Router } from "react-router-dom";
+import { Route, Switch, Router } from "react-router-dom";
 import HomePage from "./Components/HomePage";
 import MainLayout from "./layout/MainLayout";
 import PageNotFound from "./Components/PageNotFound";
 import componentQueries from "react-component-queries";
 import PortfolioList from "./Components/PortfoliosList";
-import { PrivateRoute } from "./Components/Common/PrivateRoute";
+import PrivateRoute from "./Components/Common/PrivateRoute";
 import Portfolio from "./Components/Portfolio";
 import AddAsset from "./Components/AddAsset";
 import Asset from "./Components/Asset";
@@ -16,27 +16,21 @@ import Login from "./layout/Login";
 import "./styles/reduction.scss";
 
 function App() {
-  const [token, setToken] = React.useState(localStorage.getItem("token") || "");
-  history.listen((location, action) => {
-    // clear alert on location change
-    this.props.clearAlerts();
-  });
   return (
     <Router history={history}>
       <Switch>
         <Route path="/login" component={Login} />
         <MainLayout>
           <PrivateRoute exact path="/" component={HomePage} />
-          <PrivateRoute path="/portfolio" component={Portfolio} />
-          <PrivateRoute path="/portfolios" component={PortfolioList} />
-          <PrivateRoute path="/addAsset" component={AddAsset} />
-          <PrivateRoute path="/asset" component={Asset} />
-          <PrivateRoute path="/statistics" component={PortfolioReport} />
+          <PrivateRoute exact path="/portfolio" component={Portfolio} />
+          <PrivateRoute exact path="/portfolios" component={PortfolioList} />
+          <PrivateRoute exact path="/addAsset" component={AddAsset} />
+          <PrivateRoute exact path="/asset" component={Asset} />
+          <PrivateRoute exact path="/statistics" component={PortfolioReport} />
           {/* <Route exact path="/statistics" component={} />
-                  <Route exact path="/optimizer" component={} />*/}
+                      <Route exact path="/optimizer" component={} />*/}
         </MainLayout>
         <Route component={PageNotFound} />
-        <Redirect from="*" to="/" />
       </Switch>
     </Router>
   );

@@ -2,7 +2,12 @@ import React, { useEffect, useState } from "react";
 import Page from "../layout/Page";
 import NumberWidget from "./NumberWidget";
 import GainersTable from "./Card/GainersTable";
-import { items, gainers } from "../demos/dashboardPage";
+import { items } from "../demos/dashboardPage";
+import { connect } from "react-redux";
+import { fmpActions } from "../redux/actions/fmpActions";
+import { bindActionCreators } from "redux";
+import { gainers } from "../demos/dashboardPage";
+import PropTypes from "prop-types";
 import { Pie, Doughnut } from "react-chartjs-2";
 import {
   Card,
@@ -17,12 +22,20 @@ import {
   CarouselCaption,
 } from "reactstrap";
 
+//include gainers as param later on
 const HomePage = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [gainer, setGainer] = useState(gainers);
   const [animating, setAnimating] = useState(false);
 
-  useEffect(() => window.scrollTo(0, 0));
-
+  useEffect(() => {
+    console.log("gainers ", gainer);
+    if (gainers.length === 0) {
+      console.log("empty tab");
+      fmpActions.getGainers().catch((error) => alert(error));
+    }
+    window.scrollTo(0, 0);
+  }, []);
   const next = () => {
     if (animating) return;
     const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
@@ -179,4 +192,19 @@ const HomePage = () => {
     </Page>
   );
 };
-export default HomePage;
+
+HomePage.propTypes = {
+  gainers: PropTypes.array.isRequired,
+};
+function mapStateToProps(state, ownProps) {
+  return {
+    gainers: state.gainers,
+  };
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(fmpActions, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

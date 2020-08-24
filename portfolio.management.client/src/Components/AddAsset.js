@@ -1,9 +1,13 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
 import Page from "../layout/Page";
 import GainersTable from "./Card/GainersTable";
 import { Pie, Doughnut } from "react-chartjs-2";
-import { gainers, losers } from "../demos/dashboardPage";
+import { losers } from "../demos/dashboardPage";
+import * as fmpActions from "../redux/actions/fmpActions";
+import { bindActionCreators } from "redux";
+import PropTypes from "prop-types";
 import {
   Col,
   Row,
@@ -17,10 +21,10 @@ import {
   Button,
 } from "reactstrap";
 
-const AddAsset = () => {
+const AddAsset = ({ gainers }) => {
   const history = useHistory();
   const handleSubmit = () => {
-    history.push("/dashboard/portfolio");
+    history.push("/portfolio");
   };
   const randomNum = (min = 0, max = 1000) => {
     return min + Math.random() * (max - min);
@@ -152,4 +156,19 @@ const AddAsset = () => {
     </Page>
   );
 };
-export default AddAsset;
+
+AddAsset.propTypes = {
+  gainers: PropTypes.array.isRequired,
+};
+
+function mapStateToProps(state) {
+  return {
+    gainers: state.gainers,
+  };
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(fmpActions, dispatch),
+  };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(AddAsset);

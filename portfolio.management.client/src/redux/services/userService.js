@@ -4,6 +4,7 @@ export const userService = {
 };
 
 function login(userMail, password) {
+  localStorage.setItem("user", JSON.stringify({ userMail, password }));
   var details = {
     username: userMail,
     password: password,
